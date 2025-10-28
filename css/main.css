@@ -1,0 +1,18 @@
+/* Se mantiene el estilo de fuente del código Nintendo para todos los títulos y botones */
+h1,h2,h3,h4,h5, button, .amiibo-name, p, .card-text{
+    font-family: 'Bitter', serif;
+}
+#navbar{
+    z-index: 1;
+}
+
+/* Conservamos el borde de las tarjetas y el efecto hover del código Nintendo */
+.card-border{
+    border: solid 10px white;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all ease-out 0.2s;
+}
+.card-border:hover{
+    transform: scale(1.05);
+}

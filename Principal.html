@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SERVICEBOL (Animal Crossing Style)</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        .navbar-brand, .card h5 { color: #0077ff !important; font-weight: bold; }
+        .nav-link:hover, #new-footer h4, .copy { color: #0077ff !important; }
+        body { background-color: #f9f9f9; color: #333; }
+        
+        .Usuario-container {
+            background: #fff; 
+            border-bottom: 1px solid #e6e6e6; 
+            padding: 10px 0;
+        }
+        .Usuario { 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 15px;
+        }
+        .descripcion p { 
+            margin: 0; 
+            font-family: 'Bitter', serif;
+        }
+        
+        #new-footer { 
+            background: #222; 
+            color: #fff; 
+            padding: 40px 20px; 
+        }
+        .copy { 
+            border-top: 1px solid #444; 
+            padding-top: 10px; 
+            margin-top: 20px; 
+            text-align: center; 
+        }
+        
+        .card-border {
+             border: solid 10px white;
+             border-radius: 20px;
+             overflow: hidden;
+             transition: all ease-out 0.2s;
+        }
+        .card-border:hover {
+            transform: scale(1.05);
+        }
+        
+        .whatsapp { 
+            position: fixed; 
+            bottom: 20px; 
+            right: 20px; 
+            background: #25d366; 
+            color: #fff; 
+            border-radius: 50%; 
+            width: 55px; 
+            height: 55px; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            font-size: 28px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
+            cursor: pointer; 
+            z-index: 1000;
+        }
+        
+        .accordion-item a {
+            color: #333;
+            padding: 8px 15px;
+            display: block;
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+        }
+        .accordion-item a:hover {
+            background-color: #f5f5f5;
+            color: #0077ff;
+        }
+        .card-header-custom {
+            cursor: pointer;
+            padding: .75rem 1.25rem;
+            margin-bottom: 0;
+            background-color: rgba(0,0,0,.03);
+            border-bottom: 1px solid rgba(0,0,0,.125);
+            font-weight: bold;
+        }
+        .dropdown-menu a:hover {
+            color: #0077ff !important;
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-white sticky-top border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">SERVICEBOL</a>
+            <button class="navbar-toggler" 
+                type="button" 
+                data-toggle="collapse" 
+                data-target="#navMenu"
+                aria-controls="navMenu"
+                aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse justify-content-end" id="navMenu">
+                
+                <ul class="navbar-nav ml-auto fw-bold d-none d-lg-flex">
+                    
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="inicioDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Inicio
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="inicioDropdown">
+                            <a class="dropdown-item" href="#">Servicios</a>
+                            <a class="dropdown-item" href="#">Reparacion</a>
+                            <a class="dropdown-item" href="#">Compras</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="infoDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Información General
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="infoDropdown">
+                            <a class="dropdown-item" href="#">Sobre Nosotros</a>
+                            <a class="dropdown-item" href="#">Misión y Visión</a>
+                            <a class="dropdown-item" href="#">Valores</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="serviciosDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Servicios
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="serviciosDropdown">
+                            <a class="dropdown-item" href="#">Emprendedores</a>
+                            <a class="dropdown-item" href="#">Reparadores</a>
+                            <a class="dropdown-item" href="#">Vendedores</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="tarifasDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Tarifas
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="tarifasDropdown">
+                            <a class="dropdown-item" href="#">Envios Departamentales</a>
+                            <a class="dropdown-item" href="#">Envios a Domicilio</a>
+                            <a class="dropdown-item" href="#">Recojo en oficinas</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="contactoDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Contacto
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="contactoDropdown">
+                            <a class="dropdown-item" href="#">Formulario de Contacto</a>
+                            <a class="dropdown-item" href="#">Teléfono</a>
+                            <a class="dropdown-item" href="#">Correo Electrónico</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="blogDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Blog
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="blogDropdown">
+                            <a class="dropdown-item" href="#">Pagina Principal</a>
+                            <a class="dropdown-item" href="#">Blog de Noticias</a>
+                            <a class="dropdown-item" href="#">Blog de Opinión</a>
+                        </div>
+                    </li>
+                </ul>
+                
+                <div class="d-lg-none w-100 mt-2" id="accordionMenu">
+                    
+                    <div class="card">
+                        <div class="card-header-custom" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Inicio
+                        </div>
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionMenu">
+                            <div class="card-body p-0">
+                                <ul class="list-unstyled mb-0 accordion-item">
+                                    <li><a href="#">Servicios</a></li>
+                                    <li><a href="#">Compras</a></li>
+                                    <li><a href="#">Reparaciones</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header-custom" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Información General
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionMenu">
+                            <div class="card-body p-0">
+                                <ul class="list-unstyled mb-0 accordion-item">
+                                    <li><a href="#">Sobre Nosotros</a></li>
+                                    <li><a href="#">Misión y Visión</a></li>
+                                    <li><a href="#">Valores</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header-custom" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Servicios
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionMenu">
+                            <div class="card-body p-0">
+                                <ul class="list-unstyled mb-0 accordion-item">
+                                    <li><a href="#">Emprendedores</a></li>
+                                    <li><a href="#">Reparadores</a></li>
+                                    <li><a href="#">Vendedores</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header-custom" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                            Tarifas
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionMenu">
+                            <div class="card-body p-0">
+                                <ul class="list-unstyled mb-0 accordion-item">
+                                    <li><a href="#">Envios Departamentales</a></li>
+                                    <li><a href="#">Envios a Domicilio</a></li>
+                                    <li><a href="#">Recojo de oficinas</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header-custom" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Contacto
+                        </div>
+                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionMenu">
+                            <div class="card-body p-0">
+                                <ul class="list-unstyled mb-0 accordion-item">
+                                    <li><a href="#">Formulario de Contacto</a></li>
+                                    <li><a class="dropdown-item" href="#">Teléfono</a></li>
+                                    <li><a class="dropdown-item" href="#">Correo Electrónico</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="card-header-custom" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                            Blog
+                        </div>
+                        <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordionMenu">
+                            <div class="card-body p-0">
+                                <ul class="list-unstyled mb-0 accordion-item">
+                                    <li><a href="#">Pagina Principal</a></li>
+                                    <li><a href="#">Blog de Noticias</a></li>
+                                    <li><a href="#">Blog de Opinion</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="Usuario-container">
+        <div class="container">
+            <section class="Usuario">
+                <div class="descripcion"><p>La mejor plataforma para bolivianos compradores y emprendedores</p></div>
+                <div class="d-flex align-items-center">
+                    <input class="form-control mr-3" type="text" placeholder="🔍 Buscar..." style="width:180px;">
+                    <a class="fw-bold" data-toggle="modal" data-target="#modalRegistro" href="#">Usuario ♠</a>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <section class="servicios py-5 text-center bg-white">
+        <div class="container">
+            <h2 class="mb-5 h1">Nuestras Categorias</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm card-border">
+                        <img src="https://www.baneco.com.bo/assets/content/img/images/persons/servicios/657cdaf8d9395.jpg" class="card-img-top rounded" alt="">
+                        <div class="card-body">
+                            <h5>SERVICIOS</h5>
+                            <p class="card-text">Puedes contratar servicios disponibles para mejorar tu estilo de vida sin extensas busqueda.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm card-border">
+                        <img src="https://emprendepyme.net/wp-content/uploads/2023/03/servicio-producto.jpg" class="card-img-top rounded" alt="">
+                        <div class="card-body">
+                            <h5>Compras</h5>
+                            <p class="card-text">Todos los productos que necesitas y quieres a un solo click, con envios interdepartamental y con calidad destacada.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm card-border">
+                        <img src="https://www.tejal.cl/wp-content/uploads/2021/10/reparaciones-1024x576.jpg" class="card-img-top rounded" alt="">
+                        <div class="card-body">
+                            <h5>Reparaciones</h5>
+                            <p class="card-text">Reparaciones en general tanto para hogar o para diferestes tipos de dispositivos tecnologicos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="new-footer">
+        <div class="container">
+            <div class="row text-left">
+                <div class="col-md-4 mb-4">
+                    <h4>ServiceBol</h4>
+                    <p>ServiceBol ofrece servicios, reparaciones y compras para los bolivianos. Compras, almacenamiento y envíos. Un intermediario confiable con tiendas y empresas registradas certificadas.</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h4>Oficina Principal</h4>
+                    <p>Av. Ballivian C. Olivos #133</p>
+                    <p>Email: ServiceBol@gmail.com</p>
+                    <p>Tel: +591 79611288</p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h4>Links de Ayuda</h4>
+                    <ul class="list-unstyled">
+                        <li>Preguntas frecuentes</li>
+                        <li>Tarifas</li>
+                        <li>Artículos prohibidos</li>
+                        <li>Shopping</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="copy">ServiceBol</p>
+        </div>
+    </footer>
+
+    <div class="whatsapp" onclick="window.open('https://wa.me/59179611288','_blank')">☎</div>
+
+    <div class="modal fade" id="modalRegistro" tabindex="-1" role="dialog" aria-labelledby="modalRegistroLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content p-3">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalRegistroLabel">👤 Registro de Usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <input type="text" class="form-control mb-2" placeholder="Nombre completo" required>
+                        <input type="email" class="form-control mb-2" placeholder="Correo electrónico" required>
+                        <input type="password" class="form-control mb-3" placeholder="Contraseña" required>
+                        <button type="submit" class="btn btn-primary w-100">Registrarse</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+        // Script para desplegar Dropdowns con hover en lugar de click
+        $(document).ready(function() {
+            $('.navbar-nav .dropdown').hover(function() {
+                var dropdownToggle = $(this).find('.dropdown-toggle');
+                var dropdownMenu = $(this).find('.dropdown-menu');
+
+                if ($(window).width() > 991.98) {
+                    dropdownMenu.addClass('show');
+                    dropdownToggle.attr('aria-expanded', 'true');
+                }
+            }, function() {
+                var dropdownToggle = $(this).find('.dropdown-toggle');
+                var dropdownMenu = $(this).find('.dropdown-menu');
+                
+                if ($(window).width() > 991.98) {
+                    dropdownMenu.removeClass('show');
+                    dropdownToggle.attr('aria-expanded', 'false');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
