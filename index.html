@@ -8,98 +8,93 @@
     <link href="https://fonts.googleapis.com/css2?family=Bitter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
-    
     <style>
-        .navbar-brand, .card h5 { color: #0077ff !important; font-weight: bold; }
-        .nav-link:hover, #new-footer h4, .copy { color: #0077ff !important; }
-        body { background-color: #f9f9f9; color: #333; }
-        
-        .Usuario-container {
-            background: #fff; 
-            border-bottom: 1px solid #e6e6e6; 
-            padding: 10px 0;
-        }
-        .Usuario { 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
             padding: 0 15px;
         }
-        .descripcion p { 
-            margin: 0; 
-            font-family: 'Bitter', serif;
+        
+        .full-width-carousel {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         
-        #new-footer { 
-            background: #222; 
-            color: #fff; 
-            padding: 40px 20px; 
-        }
-        .copy { 
-            border-top: 1px solid #444; 
-            padding-top: 10px; 
-            margin-top: 20px; 
-            text-align: center; 
+        .full-width-carousel .carousel-inner {
+            border-radius: 0;
         }
         
-        .card-border {
-             border: solid 10px white;
-             border-radius: 20px;
-             overflow: hidden;
-             transition: all ease-out 0.2s;
-        }
-        .card-border:hover {
-            transform: scale(1.05);
+        .full-width-carousel .carousel-item img {
+            height: 500px;
+            object-fit: cover;
+            width: 100%;
         }
         
-        .whatsapp { 
-            position: fixed; 
-            bottom: 20px; 
-            right: 20px; 
-            background: #25d366; 
-            color: #fff; 
-            border-radius: 50%; 
-            width: 55px; 
-            height: 55px; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            font-size: 28px; 
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3); 
-            cursor: pointer; 
-            z-index: 1000;
+        #ribbon {
+            background-color: rgb(58, 138, 230);
+            padding: 40px 0;
+            margin: 0;
+            width: 100%;
         }
         
-        .accordion-item a {
-            color: #333;
-            padding: 8px 15px;
-            display: block;
-            text-decoration: none;
-            border-bottom: 1px solid #eee;
+        #birthday {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
         }
-        .accordion-item a:hover {
-            background-color: #f5f5f5;
-            color: #0077ff;
+        
+        .categoria-img-container {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            background-color: #f8f9fa;
         }
-        .card-header-custom {
-            cursor: pointer;
-            padding: .75rem 1.25rem;
-            margin-bottom: 0;
-            background-color: rgba(0,0,0,.03);
-            border-bottom: 1px solid rgba(0,0,0,.125);
-            font-weight: bold;
+        
+        .categoria-img-container img {
+            max-height: 150px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
         }
-        .dropdown-menu a:hover {
-            color: #0077ff !important;
-            background-color: #f5f5f5;
+        
+        .card-img-container {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .card-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        @media (max-width: 768px) {
+            .full-width-carousel .carousel-item img {
+                height: 300px;
+            }
+            
+            .categoria-img-container {
+                height: 150px;
+            }
+            
+            .categoria-img-container img {
+                max-height: 120px;
+            }
+            
+            .card-img-container {
+                height: 200px;
+            }
         }
     </style>
 </head>
 <body>
 
     <nav class="navbar navbar-expand-lg bg-white sticky-top border-bottom">
-        <div class="container">
+        <div class="container section-container">
             <a class="navbar-brand" href="#">SERVICEBOL</a>
             <button class="navbar-toggler" 
                 type="button" 
@@ -275,7 +270,7 @@
     </nav>
 
     <div class="Usuario-container">
-        <div class="container">
+        <div class="container section-container">
             <section class="Usuario">
                 <div class="descripcion"><p>La mejor plataforma para bolivianos compradores y emprendedores</p></div>
                 <div class="d-flex align-items-center">
@@ -286,13 +281,47 @@
         </div>
     </div>
 
+    <section>
+        <div id="mainSlider" class="carousel slide full-width-carousel" data-ride="carousel">
+
+            <ol class="carousel-indicators">
+                <li data-target="#mainSlider" data-slide-to="0"></li>
+                <li data-target="#mainSlider" data-slide-to="1" class="active"></li>
+                <li data-target="#mainSlider" data-slide-to="2"></li>
+            </ol>
+            
+            <div class="carousel-inner">
+                <div class="carousel-item">
+                    <img src="img/slide01.jpg" class="d-block w-100" alt="Servicio de calidad">
+                </div>
+                <div class="carousel-item active">
+                    <img src="img/slide02.jpg" class="d-block w-100" alt="Reparaciones profesionales">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/slide03.jpg" class="d-block w-100" alt="Instalaciones seguras">
+                </div>
+            </div>
+
+            <a class="carousel-control-prev" href="#mainSlider" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Anterior</span>
+            </a>
+            <a class="carousel-control-next" href="#mainSlider" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Siguiente</span>
+            </a>
+        </div>
+    </section>
+
     <section class="servicios py-5 text-center bg-white">
-        <div class="container">
+        <div class="container section-container">
             <h2 class="mb-5 h1">Nuestras Categorias</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 border-0 shadow-sm card-border">
-                        <img src="https://www.baneco.com.bo/assets/content/img/images/persons/servicios/657cdaf8d9395.jpg" class="card-img-top rounded" alt="">
+                        <div class="card-img-container">
+                            <img src="https://www.baneco.com.bo/assets/content/img/images/persons/servicios/657cdaf8d9395.jpg" class="card-img-top" alt="Servicios">
+                        </div>
                         <div class="card-body">
                             <h5>SERVICIOS</h5>
                             <p class="card-text">Puedes contratar servicios disponibles para mejorar tu estilo de vida sin extensas busqueda.</p>
@@ -301,7 +330,9 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 border-0 shadow-sm card-border">
-                        <img src="https://emprendepyme.net/wp-content/uploads/2023/03/servicio-producto.jpg" class="card-img-top rounded" alt="">
+                        <div class="card-img-container">
+                            <img src="https://emprendepyme.net/wp-content/uploads/2023/03/servicio-producto.jpg" class="card-img-top" alt="Compras">
+                        </div>
                         <div class="card-body">
                             <h5>Compras</h5>
                             <p class="card-text">Todos los productos que necesitas y quieres a un solo click, con envios interdepartamental y con calidad destacada.</p>
@@ -310,7 +341,9 @@
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="card h-100 border-0 shadow-sm card-border">
-                        <img src="https://www.tejal.cl/wp-content/uploads/2021/10/reparaciones-1024x576.jpg" class="card-img-top rounded" alt="">
+                        <div class="card-img-container">
+                            <img src="https://www.tejal.cl/wp-content/uploads/2021/10/reparaciones-1024x576.jpg" class="card-img-top" alt="Reparaciones">
+                        </div>
                         <div class="card-body">
                             <h5>Reparaciones</h5>
                             <p class="card-text">Reparaciones en general tanto para hogar o para diferestes tipos de dispositivos tecnologicos.</p>
@@ -321,8 +354,516 @@
         </div>
     </section>
 
+    <section class="mejores-servicios py-5">
+        <div class="container section-container">
+            <h2 class="mb-5 h1 text-center">Mejores Servicios de Instalación</h2>
+            <p class="text-center lead mb-5">Profesionales certificados para tus instalaciones más importantes</p>
+
+            <div class="servicio-fila mb-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <div class="servicio-img-container">
+                            <img src="https://scontent.flpb2-2.fna.fbcdn.net/v/t39.30808-6/571244905_122257619828196579_6944435138926254186_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=bLCO0x6t69wQ7kNvwEhQvjd&_nc_oc=Adngb1asv6eDZ0OUKXn2Ph4KRZVnM9gxCnSeRCOfUn3mpgPVrckXFRi39XMnz7sFXvicncFtAmL-hqidroM_AJQ-&_nc_zt=23&_nc_ht=scontent.flpb2-2.fna&_nc_gid=v4ox3H-1MsYSCnqrjmt-9g&oh=00_Afc1emtO4Us0x0MOxLtkXXupEo9HDI0eP9VR3WYtPX4BTw&oe=69083C08" 
+                                 class="img-fluid rounded shadow" alt="Instalación de Plomería">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="servicio-content">
+                            <div class="servicio-header mb-4">
+                                <div class="servicio-icon d-inline-block mr-3">
+                                    <i class="fas fa-faucet fa-2x text-primary"></i>
+                                </div>
+                                <h3 class="d-inline-block text-primary">Instalación de Plomería</h3>
+                            </div>
+                            <p class="servicio-descripcion mb-4">
+                                Instalación profesional de sistemas de agua fría y caliente, reparación de tuberías y montaje de sanitarios. 
+                                Nuestros técnicos certificados garantizan trabajos de calidad con materiales duraderos y cumplimiento de normativas.
+                            </p>
+                            <div class="servicio-features mb-4">
+                                <span class="badge badge-primary mr-2 mb-2">Sistemas de Agua</span>
+                                <span class="badge badge-success mr-2 mb-2">Reparaciones</span>
+                                <span class="badge badge-info mr-2 mb-2">Montaje Sanitario</span>
+                                <span class="badge badge-warning mb-2">Garantía 1 Año</span>
+                            </div>
+                            <div class="servicio-info mb-4">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong class="text-success h5">Desde 150 Bs.</strong>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <span class="text-muted"><i class="fas fa-clock mr-1"></i> 2-4 horas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn servicio-btn">Solicitar Servicio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="servicio-fila mb-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <div class="servicio-img-container">
+                            <img src="https://scontent.flpb2-2.fna.fbcdn.net/v/t39.30808-6/483522953_1049372317000097_2201304500465091006_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_aid=0&_nc_ohc=tdwYRh8wWHIQ7kNvwGc9LX8&_nc_oc=AdnDsb7LYZWVlQE_RrH4aZuxsWsQ3XaBziIrzWG6UQ7s_tzLtM6FchGYWRKhwHQ3rW69jQe9G_fJRdNoLZuZ50G0&_nc_zt=23&_nc_ht=scontent.flpb2-2.fna&_nc_gid=SB9uUesVNhARGCzjdLW7Kw&oh=00_AfcmL5bhSZMwFPAj0_OHkWuQpj4Q58jD8ZgT5Lg4l-Zrfg&oe=69085811" 
+                                 class="img-fluid rounded shadow" alt="Instalación de Gas">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="servicio-content">
+                            <div class="servicio-header mb-4">
+                                <div class="servicio-icon d-inline-block mr-3">
+                                    <i class="fas fa-fire fa-2x text-warning"></i>
+                                </div>
+                                <h3 class="d-inline-block text-warning">Instalación de Gas</h3>
+                            </div>
+                            <p class="servicio-descripcion mb-4">
+                                Instalación segura de sistemas de gas natural y LP con certificados de seguridad incluidos. 
+                                Técnicos especializados en normativas de seguridad nacionales e internacionales.
+                            </p>
+                            <div class="servicio-features mb-4">
+                                <span class="badge badge-primary mr-2 mb-2">Gas Natural</span>
+                                <span class="badge badge-success mr-2 mb-2">Gas LP</span>
+                                <span class="badge badge-danger mr-2 mb-2">Certificado</span>
+                                <span class="badge badge-dark mb-2">Normas ISO</span>
+                            </div>
+                            <div class="servicio-info mb-4">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong class="text-success h5">Desde 200 Bs.</strong>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <span class="text-muted"><i class="fas fa-clock mr-1"></i> 3-5 horas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn servicio-btn">Solicitar Servicio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Servicio 3: Electricidad -->
+            <div class="servicio-fila mb-5">
+                <div class="row align-items-center">
+                    <div class="col-md-6 mb-4 mb-md-0">
+                        <div class="servicio-img-container">
+                            <img src="https://scontent.flpb2-2.fna.fbcdn.net/v/t39.30808-6/374743366_775653151237071_7132377891326268050_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=9lSj5QrRZUsQ7kNvwFd4qam&_nc_oc=AdlAZzvknDnnjs1eA9ka9zK76dEhpO0ZnK50HZsD2KBZSh0I66dpqxUISnL0-v2Z6YoOZbZgDosQwArlXeT79LQ9&_nc_zt=23&_nc_ht=scontent.flpb2-2.fna&_nc_gid=sG4l5dF-SUzIQU9Xswoqpw&oh=00_Afdwc9EhVaVqVePJgnGDk0K9rtV4x_ib8tjdI7Beai9Svg&oe=6908296B" 
+                                 class="img-fluid rounded shadow" alt="Instalación Eléctrica">
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="servicio-content">
+                            <div class="servicio-header mb-4">
+                                <div class="servicio-icon d-inline-block mr-3">
+                                    <i class="fas fa-bolt fa-2x text-info"></i>
+                                </div>
+                                <h3 class="d-inline-block text-info">Instalación Eléctrica</h3>
+                            </div>
+                            <p class="servicio-descripcion mb-4">
+                                Instalación y mantenimiento de sistemas eléctricos residenciales e industriales. 
+                                Cumplimiento total con normas de seguridad eléctrica nacionales e internacionales.
+                            </p>
+                            <div class="servicio-features mb-4">
+                                <span class="badge badge-primary mr-2 mb-2">Residencial</span>
+                                <span class="badge badge-success mr-2 mb-2">Industrial</span>
+                                <span class="badge badge-dark mr-2 mb-2">24/7</span>
+                                <span class="badge badge-danger mb-2">Certificado</span>
+                            </div>
+                            <div class="servicio-info mb-4">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong class="text-success h5">Desde 180 Bs.</strong>
+                                    </div>
+                                    <div class="col-6 text-right">
+                                        <span class="text-muted"><i class="fas fa-clock mr-1"></i> 2-6 horas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#" class="btn servicio-btn">Solicitar Servicio</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary btn-lg">Ver Todos los Servicios</a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="ribbon">
+            <div id="birthday" class="container-fluid">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-5 col-md-6 p-4 text-center">
+                        <img src="https://i.guim.co.uk/img/media/2ce8db064eabb9e22a69cc45a9b6d4e10d595f06/392_612_4171_2503/master/4171.jpg?width=1900&dpr=1&s=none&crop=none" class="img-fluid rounded shadow" alt="Producto más vendido" style="max-height: 300px; width: auto;">
+                    </div>
+                    <div class="col-lg-5 col-md-6 p-4 text-light text-center">
+                        <p class="text-warning h3 mb-3">El Producto más vendido</p>
+                        <p class="h5 text-shadow mb-4">El Smartphone XYZ ha sido nuestro producto más vendido. Con una pantalla de alta resolución, batería de larga duración y cámaras de última generación, es perfecto para quienes buscan lo mejor en tecnología.</p>
+                        <a href="#" class="btn btn-warning btn-lg">Ver más detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="categorias-compras py-5 text-center bg-light">
+        <div class="container section-container">
+            <h2 class="mb-5 h1">Categorías de Compras</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="categoria-item card h-100 border-0 shadow-sm card-border">
+                        <div class="categoria-img-container">
+                            <img src="https://cdn-icons-png.freepik.com/512/1787/1787134.png" class="img-fluid" alt="Celulares">
+                        </div>
+                        <div class="card-body">
+                            <h5>Celulares</h5>
+                            <p>Los mejores smartphones con tecnología de punta. Encuentra modelos para todos los gustos.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="categoria-item card h-100 border-0 shadow-sm card-border">
+                        <div class="categoria-img-container">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/%C3%8Dcono_Computadora_-_Internet.JPG" class="img-fluid" alt="Computadoras">
+                        </div>
+                        <div class="card-body">
+                            <h5>Computadoras</h5>
+                            <p>Potentes laptops y desktops para todas tus necesidades profesionales y de entretenimiento.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="categoria-item card h-100 border-0 shadow-sm card-border">
+                        <div class="categoria-img-container">
+                            <img src="https://previews.123rf.com/images/olegtoka/olegtoka1803/olegtoka180300003/96637066-illustration-of-accessories-icons-for-mobile-phone-devices.jpg" class="img-fluid" alt="Accesorios">
+                        </div>
+                        <div class="card-body">
+                            <h5>Accesorios</h5>
+                            <p>Complementos ideales para mejorar tu experiencia con gadgets, tecnología y más.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="categoria-item card h-100 border-0 shadow-sm card-border">
+                        <div class="categoria-img-container">
+                            <img src="https://previews.123rf.com/images/yupiramos/yupiramos1804/yupiramos180401061/98575220-shirt-clothes-isolated-icon-vector-illustration-design.jpg" class="img-fluid" alt="Ropa">
+                        </div>
+                        <div class="card-body">
+                            <h5>Ropa</h5>
+                            <p>Las últimas tendencias de moda, ropa cómoda y elegante para todas las edades.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="categoria-item card h-100 border-0 shadow-sm card-border">
+                        <div class="categoria-img-container">
+                            <img src="https://previews.123rf.com/images/mchlskhrv/mchlskhrv1711/mchlskhrv171100109/90041087-sneakers-sport-shoes-vector-illustration.jpg" class="img-fluid" alt="Zapatos">
+                        </div>
+                        <div class="card-body">
+                            <h5>Zapatos</h5>
+                            <p>Elige entre una amplia variedad de zapatos, desde deportivos hasta de vestir.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="categoria-item card h-100 border-0 shadow-sm card-border">
+                        <div class="categoria-img-container">
+                            <img src="https://previews.123rf.com/images/yupiramos/yupiramos1905/yupiramos190511872/121970844-kids-toys-bear-cubes-boat-rocket-drum-truck-bucket-xylophone-vector-illustration.jpg" class="img-fluid" alt="Juguetes">
+                        </div>
+                        <div class="card-body">
+                            <h5>Juguetes</h5>
+                            <p>Juguetes creativos y educativos para niños de todas las edades. Diversión garantizada.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="categoria-item card h-100 border-0 shadow-sm card-border">
+                        <div class="categoria-img-container">
+                            <img src="https://previews.123rf.com/images/memetiqaosvor/memetiqaosvor2507/memetiqaosvor250770463/248940015-modern-flat-design-vector-illustration-concept-of-smart-home-appliances-and-electronics-smart.jpg" class="img-fluid" alt="Electrodomésticos">
+                        </div>
+                        <div class="card-body">
+                            <h5>Electrodomésticos</h5>
+                            <p>Encuentra los mejores electrodomésticos, desde frigoríficos hasta aspiradoras.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="categoria-item card h-100 border-0 shadow-sm card-border">
+                        <div class="categoria-img-container">
+                            <img src="https://previews.123rf.com/images/marvinjk/marvinjk2305/marvinjk230500076/210780801-tools-flat-contour-style-vector-concept-illustration.jpg" class="img-fluid" alt="Herramientas">
+                        </div>
+                        <div class="card-body">
+                            <h5>Herramientas</h5>
+                            <p>Herramientas para bricolaje, reparaciones y proyectos en casa o el trabajo.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="categoria-item card h-100 border-0 shadow-sm card-border">
+                        <div class="categoria-img-container">
+                            <img src="https://previews.123rf.com/images/memetiqaosvor/memetiqaosvor2507/memetiqaosvor250749727/249007646-vector-illustration-of-kebab-french-fries-and-salad-on-white-background.jpg" class="img-fluid" alt="Alimentos">
+                        </div>
+                        <div class="card-body">
+                            <h5>Alimentos</h5>
+                            <p>Compra productos alimenticios de calidad, desde ingredientes básicos hasta productos gourmet.</p>
+                            <a href="#" class="btn btn-outline-primary">Ver más</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+            
+    <section class="envios py-5 text-center bg-white">
+        <div class="container section-container">
+            <h2 class="mb-5 h1">Nuestros Servicios de Envío</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm card-border">
+                        <div class="card-img-container">
+                            <img src="https://www.socialhizo.com/images/mapas/mapas-america/mapa-de-bolivia-division-politica-socialhizo.jpg" class="card-img-top" alt="Envíos Departamentales">
+                        </div>
+                        <div class="card-body">
+                            <h5>Envíos Departamentales</h5>
+                            <p class="card-text">Garantizamos entregas rápidas y seguras dentro de los principales departamentos de Bolivia, con opciones de seguimiento en tiempo real para su tranquilidad.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm card-border">
+                        <div class="card-img-container">
+                            <img src="https://scontent.flpb2-2.fna.fbcdn.net/v/t39.30808-6/299849420_523284106463875_8177328744620502240_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=zuHCpi3dh7gQ7kNvwEZ4Vsu&_nc_oc=AdlJJjtiPCpPDJjdIHGx5fqQEYdPsQmVD-3Z0X9Pwx-zDa_6LqMNUxTIqdBNMf2V0qFUeWEL46H6RBNLyxP1oD2T&_nc_zt=23&_nc_ht=scontent.flpb2-2.fna&_nc_gid=WompWm_YYhdsG9guelBkKg&oh=00_AfeEH2jSDwDVSguGZ-zvAmCfBb6YUIezfksDeAJz7wGEZg&oe=6908475E" class="card-img-top" alt="Envíos a Domicilio">
+                        </div>
+                        <div class="card-body">
+                            <h5>Envíos a Domicilio</h5>
+                            <p class="card-text">Ofrecemos envíos a la puerta de su hogar, con la garantía de entrega puntual y la opción de seleccionar el horario que más le convenga.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 border-0 shadow-sm card-border">
+                        <div class="card-img-container">
+                            <img src="https://static.vecteezy.com/system/resources/previews/002/757/037/non_2x/post-office-female-worker-and-customer-flat-color-illustration-sending-parcel-procedures-post-service-delivery-parcels-collection-point-isolated-cartoon-character-on-white-background-vector.jpg" class="card-img-top" alt="Recojo en Oficina">
+                        </div>
+                        <div class="card-body">
+                            <h5>Recojo en Oficina</h5>
+                            <p class="card-text">Si prefiere realizar el retiro de sus productos de manera presencial, tenemos oficinas en varias ciudades para que pueda recoger su pedido con facilidad y rapidez.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="tecnicos-reparacion-filas py-5">
+        <div class="container section-container">
+            <h2 class="mb-5 h1 text-center">Nuestros Técnicos Especializados</h2>
+            <p class="text-center lead mb-5">Profesionales certificados con las mejores calificaciones</p>
+
+            <div class="tecnico-fila mb-4">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center mb-3 mb-md-0">
+                        <div class="tecnico-img-container">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                                 class="tecnico-img" alt="Carlos Mendoza">
+                            <div class="tecnico-especialidad">
+                                <i class="fas fa-tv"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="tecnico-info-principal">
+                            <h4 class="tecnico-nombre mb-1">Carlos Mendoza</h4>
+                            <p class="tecnico-especialidad-texto text-primary mb-2">Especialista en Electrodomésticos</p>
+                            
+                            <div class="tecnico-calificacion mb-2">
+                                <div class="estrellas d-inline-block">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <span class="puntuacion ml-2">✫ 4.8</span>
+                                <small class="text-muted ml-2">(124 reparaciones)</small>
+                            </div>
+                            
+                            <div class="tecnico-detalles mb-2">
+                                <span class="mr-3"><i class="fas fa-briefcase text-primary mr-1"></i>5 años</span>
+                                <span class="mr-3"><i class="fas fa-check-circle text-success mr-1"></i>Certificado</span>
+                                <span><i class="fas fa-bolt text-warning mr-1"></i>Disponible</span>
+                            </div>
+                            
+                            <div class="tecnico-servicios">
+                                <span class="badge badge-light mr-1 mb-1">Refrigeradores</span>
+                                <span class="badge badge-light mr-1 mb-1">Lavadoras</span>
+                                <span class="badge badge-light mr-1 mb-1">Cocinas</span>
+                                <span class="badge badge-light mb-1">Hornos</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="tecnico-precio mb-3">
+                            <strong class="text-success h4">80 Bs.</strong>
+                            <small class="d-block text-muted">precio base</small>
+                        </div>
+                        <button class="btn tecnico-btn w-100">
+                            <i class="fas fa-calendar-check mr-2"></i>Agendar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tecnico-fila mb-4">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center mb-3 mb-md-0">
+                        <div class="tecnico-img-container">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" 
+                                 class="tecnico-img" alt="Ana Rodríguez">
+                            <div class="tecnico-especialidad">
+                                <i class="fas fa-couch"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="tecnico-info-principal">
+                            <h4 class="tecnico-nombre mb-1">Rodrigo Alvarez</h4>
+                            <p class="tecnico-especialidad-texto text-warning mb-2">Especialista en Muebles</p>
+                            
+                            <div class="tecnico-calificacion mb-2">
+                                <div class="estrellas d-inline-block">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="puntuacion ml-2">✫ 5.0</span>
+                                <small class="text-muted ml-2">(89 reparaciones)</small>
+                            </div>
+                            
+                            <div class="tecnico-detalles mb-2">
+                                <span class="mr-3"><i class="fas fa-briefcase text-warning mr-1"></i>7 años</span>
+                                <span class="mr-3"><i class="fas fa-award text-info mr-1"></i>Maestra</span>
+                                <span><i class="fas fa-bolt text-warning mr-1"></i>Disponible</span>
+                            </div>
+                            
+                            <div class="tecnico-servicios">
+                                <span class="badge badge-light mr-1 mb-1">Madera</span>
+                                <span class="badge badge-light mr-1 mb-1">Tapicería</span>
+                                <span class="badge badge-light mr-1 mb-1">Restauración</span>
+                                <span class="badge badge-light mb-1">Antigüedades</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="tecnico-precio mb-3">
+                            <strong class="text-success h4">60 Bs.</strong>
+                            <small class="d-block text-muted">precio base</small>
+                        </div>
+                        <button class="btn tecnico-btn w-100">
+                            <i class="fas fa-calendar-check mr-2"></i>Agendar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tecnico-fila mb-4">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center mb-3 mb-md-0">
+                        <div class="tecnico-img-container">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80" 
+                                 class="tecnico-img" alt="Miguel Torres">
+                            <div class="tecnico-especialidad">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <div class="tecnico-info-principal">
+                            <h4 class="tecnico-nombre mb-1">Miguel Torres</h4>
+                            <p class="tecnico-especialidad-texto text-info mb-2">Especialista en Dispositivos</p>
+                            
+                            <div class="tecnico-calificacion mb-2">
+                                <div class="estrellas d-inline-block">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="puntuacion ml-2">✫ 4.9</span>
+                                <small class="text-muted ml-2">(156 reparaciones)</small>
+                            </div>
+                            
+                            <div class="tecnico-detalles mb-2">
+                                <span class="mr-3"><i class="fas fa-briefcase text-info mr-1"></i>4 años</span>
+                                <span class="mr-3"><i class="fas fa-bolt text-danger mr-1"></i>Urgente</span>
+                                <span><i class="fas fa-bolt text-warning mr-1"></i>Disponible</span>
+                            </div>
+                            
+                            <div class="tecnico-servicios">
+                                <span class="badge badge-light mr-1 mb-1">Smartphones</span>
+                                <span class="badge badge-light mr-1 mb-1">Laptops</span>
+                                <span class="badge badge-light mr-1 mb-1">Tablets</span>
+                                <span class="badge badge-light mb-1">Computadoras</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 text-center">
+                        <div class="tecnico-precio mb-3">
+                            <strong class="text-success h4">100 Bs.</strong>
+                            <small class="d-block text-muted">precio base</small>
+                        </div>
+                        <button class="btn tecnico-btn w-100">
+                            <i class="fas fa-calendar-check mr-2"></i>Agendar
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-users mr-2"></i>Ver Todos los Técnicos
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="mision-vision py-5 text-center bg-light">
+        <div class="container section-container">
+            <h2 class="mb-5 h1">Misión y Visión</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h5>Misión</h5>
+                    <p>Proveer a los bolivianos un servicio confiable y eficiente de compras, reparaciones y envíos, promoviendo la comodidad, el ahorro de tiempo y la satisfacción de nuestros usuarios a través de una plataforma de fácil acceso y soluciones innovadoras.</p>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h5>Visión</h5>
+                    <p>Ser la plataforma líder en Bolivia que ofrece soluciones integrales para la compra de productos, contratación de servicios y reparaciones, contribuyendo al desarrollo económico y mejorando la calidad de vida de nuestros usuarios.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="informacion py-5 text-center bg-white">
+        <div class="container section-container">
+            <h2 class="mb-5 h1">Sobre Nosotros</h2>
+            <p>En ServiceBol, nos dedicamos a ofrecer soluciones prácticas y accesibles para todos los bolivianos, creando una plataforma que conecta compradores, emprendedores y reparadores a través de servicios de calidad, envíos confiables y asistencia profesional.</p>
+        </div>
+    </section>           
+    
     <footer id="new-footer">
-        <div class="container">
+        <div class="container section-container">
             <div class="row text-left">
                 <div class="col-md-4 mb-4">
                     <h4>ServiceBol</h4>
@@ -376,7 +917,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
     <script>
-        // Script para desplegar Dropdowns con hover en lugar de click
         $(document).ready(function() {
             $('.navbar-nav .dropdown').hover(function() {
                 var dropdownToggle = $(this).find('.dropdown-toggle');

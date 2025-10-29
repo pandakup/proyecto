@@ -1,18 +1,973 @@
-/* Se mantiene el estilo de fuente del código Nintendo para todos los títulos y botones */
-h1,h2,h3,h4,h5, button, .amiibo-name, p, .card-text{
+h1, h2, h3, h4, h5, button, .amiibo-name, p, .card-text {
     font-family: 'Bitter', serif;
 }
-#navbar{
+
+#navbar {
     z-index: 1;
+    background: linear-gradient(135deg, #000000 0%, #000000 100%) !important;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
 }
 
-/* Conservamos el borde de las tarjetas y el efecto hover del código Nintendo */
-.card-border{
-    border: solid 10px white;
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all ease-out 0.2s;
+.navbar-brand { 
+    color: #3498db !important; 
+    font-weight: bold;
+    font-size: 1.5rem;
 }
-.card-border:hover{
+
+.nav-link { 
+    color: black !important;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover, .nav-link:focus { 
+    color: #3498db !important;
+    transform: translateY(-2px);
+}
+
+.card h5 { 
+    color: #2c3e50 !important; 
+    font-weight: bold; 
+}
+
+#new-footer h4, .copy { 
+    color: #3498db !important; 
+}
+
+body { 
+    background: linear-gradient(135deg, #ecf0f1 0%, #dfe6e9 100%); 
+    color: #2c3e50; 
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.full-width-carousel {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.full-width-carousel .carousel-inner {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.full-width-carousel .carousel-item img {
+    height: 500px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.Usuario-container {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%); 
+    border-bottom: 2px solid #3498db;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.Usuario { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 15px;
+}
+
+.descripcion p { 
+    margin: 0; 
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+#new-footer { 
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%); 
+    color: #ecf0f1; 
+    padding: 50px 0 20px; 
+}
+
+.copy { 
+    border-top: 1px solid #4a6572; 
+    padding-top: 20px; 
+    margin-top: 30px; 
+    text-align: center; 
+    color: #bdc3c7;
+}
+
+.card-border {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.card-border:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.whatsapp { 
+    position: fixed; 
+    bottom: 25px; 
+    right: 25px; 
+    background: linear-gradient(135deg, #25d366 0%, #128C7E 100%); 
+    color: #fff; 
+    border-radius: 50%; 
+    width: 60px; 
+    height: 60px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 30px; 
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); 
+    cursor: pointer; 
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.whatsapp:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
+}
+
+.accordion-item a {
+    color: #2c3e50;
+    padding: 12px 20px;
+    display: block;
+    text-decoration: none;
+    border-bottom: 1px solid #ecf0f1;
+    transition: all 0.3s ease;
+}
+
+.accordion-item a:hover {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    padding-left: 30px;
+}
+
+.card-header-custom {
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    margin-bottom: 0;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    border-bottom: none;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.card-header-custom:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #2471a3 100%);
+}
+
+.dropdown-menu {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    background: white;
+}
+
+.dropdown-menu a:hover {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%) !important;
+    color: white !important;
+}
+
+.card-img-container {
+    height: 220px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.card-border:hover .card-img-container img {
     transform: scale(1.05);
+}
+
+.categoria-img-container {
+    height: 180px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+}
+
+.categoria-img-container img {
+    max-height: 150px;
+    width: auto;
+    max-width: 100%;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.card-border:hover .categoria-img-container img {
+    transform: scale(1.1);
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    border: none;
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: white;
+}
+
+.card-body p {
+    flex: 1;
+    color: #5d6d7e;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    border: none;
+    border-radius: 25px;
+    padding: 10px 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #2471a3 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.btn-outline-primary {
+    border: 2px solid #3498db;
+    color: #3498db;
+    border-radius: 25px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    border-color: #3498db;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+}
+
+#ribbon {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    padding: 60px 0;
+    margin: 0;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+}
+
+#birthday {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+#birthday img {
+    border-radius: 15px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+}
+
+#birthday img:hover {
+    transform: scale(1.02);
+}
+
+.text-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.servicios {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.categorias-compras {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.envios {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.mision-vision {
+    background: linear-gradient(135deg, #ecf0f1 0%, #dfe6e9 100%);
+}
+
+.informacion {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+.servicios .card-img-container,
+.envios .card-img-container {
+    height: 220px;
+}
+
+.modal-content {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border-radius: 15px 15px 0 0;
+    border: none;
+}
+
+@media (max-width: 768px) {
+    .full-width-carousel .carousel-item img {
+        height: 300px;
+    }
+    
+    .card-img-container {
+        height: 200px;
+    }
+    
+    .categoria-img-container {
+        height: 150px;
+    }
+    
+    .categoria-img-container img {
+        max-height: 120px;
+    }
+    
+    .section-container {
+        padding: 0 10px;
+    }
+    
+    #birthday img {
+        margin-top: 0;
+    }
+    
+    .navbar-brand {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .full-width-carousel .carousel-item img {
+        height: 250px;
+    }
+    
+    .categoria-img-container {
+        height: 140px;
+    }
+    
+    .categoria-img-container img {
+        max-height: 110px;
+    }
+    
+    .Usuario {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .whatsapp {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+.mejores-servicios {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 50%, #e9ecef 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.mejores-servicios::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(135deg, #3498db, #e74c3c, #f39c12);
+}
+
+.servicio-fila {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    min-height: 400px; 
+    display: flex;
+    align-items: center;
+}
+
+.servicio-fila:hover {
+    transform: translateY(-5px);
+    border-color: #3498db;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+}
+
+.servicio-img-container {
+    height: 350px; 
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.servicio-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+    transition: transform 0.4s ease;
+}
+
+.servicio-fila:hover .servicio-img-container img {
+    transform: scale(1.05);
+}
+
+.servicio-content {
+    padding: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.servicio-header {
+    border-bottom: 3px solid #ecf0f1;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.servicio-icon {
+    background: white;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border: 3px solid #f8f9fa;
+}
+
+.servicio-descripcion {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #5d6d7e;
+    margin-bottom: 20px;
+}
+
+.servicio-features .badge {
+    font-size: 0.8rem;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-weight: 600;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-bottom: 8px;
+}
+
+.badge-primary {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: white;
+}
+
+.badge-success {
+    background: linear-gradient(135deg, #27ae60, #229954);
+    color: white;
+}
+
+.badge-info {
+    background: linear-gradient(135deg, #17a2b8, #138496);
+    color: white;
+}
+
+.badge-danger {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+    color: white;
+}
+
+.badge-warning {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: white;
+}
+
+.badge-dark {
+    background: linear-gradient(135deg, #34495e, #2c3e50);
+    color: white;
+}
+
+.servicio-info {
+    background: #f8f9fa;
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #3498db;
+    margin-bottom: 20px;
+}
+
+.servicio-btn {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    border: none;
+    border-radius: 30px;
+    padding: 12px 35px;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+}
+
+.servicio-btn:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #2471a3 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+    color: white;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .servicio-fila {
+        padding: 25px;
+        margin-bottom: 30px;
+        min-height: auto;
+        display: block;
+    }
+    
+    .servicio-img-container {
+        height: 250px; /* Altura fija en móvil */
+        margin-bottom: 20px;
+    }
+    
+    .servicio-content {
+        padding: 10px;
+        height: auto;
+    }
+    
+    .servicio-header h3 {
+        font-size: 1.5rem;
+    }
+    
+    .servicio-icon {
+        padding: 12px;
+    }
+    
+    .servicio-icon i {
+        font-size: 1.5rem !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .servicio-fila {
+        padding: 20px;
+    }
+    
+    .servicio-img-container {
+        height: 220px; 
+    }
+    
+    .servicio-features .badge {
+        font-size: 0.7rem;
+        padding: 8px 12px;
+        margin-bottom: 8px;
+    }
+    
+    .servicio-info .row .col-6 {
+        text-align: center !important;
+        margin-bottom: 10px;
+    }
+    
+    .servicio-btn {
+        padding: 10px 25px;
+        font-size: 1rem;
+        width: 100%;
+    }
+}
+
+
+
+.tecnicos-reparacion-filas {
+    background: linear-gradient(500deg, #a3cdf8 50%);
+    position: relative;
+}
+
+.tecnicos-reparacion-filas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(135deg, #9b59b6, #3498db, #27ae60);
+}
+
+.tecnico-fila {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.tecnico-fila:hover {
+    transform: translateY(-3px);
+    border-color: #3498db;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.tecnico-img-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tecnico-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #f8f9fa;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.tecnico-fila:hover .tecnico-img {
+    border-color: #3498db;
+    transform: scale(1.05);
+}
+
+.tecnico-especialidad {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    border: 2px solid #f8f9fa;
+}
+
+.tecnico-especialidad i {
+    font-size: 0.9rem;
+}
+
+.tecnico-nombre {
+    color: #2c3e50;
+    font-weight: 700;
+    font-size: 1.4rem;
+}
+
+.tecnico-especialidad-texto {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.tecnico-calificacion {
+    padding: 10px 0;
+}
+
+.estrellas i {
+    color: #f39c12;
+    margin: 0 1px;
+    font-size: 0.9rem;
+}
+
+.puntuacion {
+    font-weight: 700;
+    color: #2c3e50;
+    background: #f8f9fa;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+.tecnico-detalles {
+    font-size: 0.9rem;
+}
+
+.tecnico-detalles span {
+    display: inline-block;
+    background: #f8f9fa;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-weight: 500;
+}
+
+.tecnico-servicios .badge {
+    background: linear-gradient(135deg, #ecf0f1, #e9ecef);
+    color: #5d6d7e;
+    font-weight: 500;
+    padding: 6px 10px;
+    border-radius: 12px;
+    border: 1px solid #dee2e6;
+    font-size: 0.8rem;
+}
+
+.tecnico-precio {
+    padding: 15px;
+    background: linear-gradient(135deg, #d5f4e6, #e8f8f5);
+    border-radius: 10px;
+    border: 2px solid #27ae60;
+}
+
+.tecnico-btn {
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    font-size: 0.9rem;
+}
+
+.tecnico-btn:hover {
+    background: linear-gradient(135deg, #2980b9 0%, #2471a3 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .tecnico-fila {
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .tecnico-img {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .tecnico-especialidad {
+        width: 25px;
+        height: 25px;
+        bottom: 3px;
+        right: 3px;
+    }
+    
+    .tecnico-especialidad i {
+        font-size: 0.8rem;
+    }
+    
+    .tecnico-nombre {
+        font-size: 1.2rem;
+    }
+    
+    .tecnico-detalles span {
+        display: block;
+        margin-bottom: 5px;
+        margin-right: 0 !important;
+    }
+    
+    .tecnico-precio {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .tecnico-fila {
+        padding: 15px;
+    }
+    
+    .tecnico-img {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .tecnico-servicios .badge {
+        font-size: 0.7rem;
+        padding: 4px 8px;
+        margin-bottom: 5px;
+    }
+}
+
+
+
+
+/* Carrusel con tamaño uniforme */
+.full-width-carousel {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 500px; /* Altura fija para el carrusel */
+    overflow: hidden;
+}
+
+.full-width-carousel .carousel-inner {
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    overflow: hidden;
+    height: 100%; /* Ocupa toda la altura del contenedor */
+}
+
+.full-width-carousel .carousel-item {
+    height: 100%; /* Cada slide ocupa toda la altura */
+}
+
+.full-width-carousel .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el espacio manteniendo proporciones */
+    object-position: center; /* Centra la imagen */
+}
+
+/* Estilos para las flechas del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    margin: 0 20px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.carousel-control-prev {
+    left: 20px;
+}
+
+.carousel-control-next {
+    right: 20px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    background: rgba(52, 152, 219, 0.8);
+    transform: translateY(-50%) scale(1.1);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    width: 25px;
+    height: 25px;
+    background-size: 25px 25px;
+    filter: invert(1);
+}
+
+/* Indicadores del carrusel (opcional) */
+.carousel-indicators {
+    bottom: 20px;
+}
+
+.carousel-indicators li {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 6px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+    background-color: #3498db;
+    transform: scale(1.2);
+}
+
+/* Efectos adicionales para el carrusel */
+.carousel {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item {
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Responsive para el carrusel */
+@media (max-width: 768px) {
+    .full-width-carousel {
+        height: 400px; /* Altura menor en tablet */
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 50px;
+        height: 50px;
+        margin: 0 10px;
+    }
+    
+    .carousel-control-prev {
+        left: 10px;
+    }
+    
+    .carousel-control-next {
+        right: 10px;
+    }
+    
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 20px;
+        height: 20px;
+        background-size: 20px 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .full-width-carousel {
+        height: 300px; /* Altura menor en móvil */
+    }
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        width: 40px;
+        height: 40px;
+        margin: 0 5px;
+    }
+    
+    .carousel-control-prev {
+        left: 5px;
+    }
+    
+    .carousel-control-next {
+        right: 5px;
+    }
+    
+    .carousel-indicators {
+        bottom: 10px;
+    }
+    
+    .carousel-indicators li {
+        width: 8px;
+        height: 8px;
+        margin: 0 4px;
+    }
 }
